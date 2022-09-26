@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy-mood
+  annotations:
+    kapp.k14s.io/update-strategy: fallback-on-replace
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+  labels:
+    app.kubernetes.io/part-of: legacy-mood
+    apps.tanzu.vmware.com/workload-type: dekt-worker
+    app.kubernetes.io/component: run
+    carto.run/workload-name: legacy-mood
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: run
+      app.kubernetes.io/part-of: legacy-mood
+      apps.tanzu.vmware.com/workload-type: dekt-worker
+      carto.run/workload-name: legacy-mood
+  template:
+    metadata:
+      annotations:
+        conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: legacy-mood
+        apps.tanzu.vmware.com/workload-type: dekt-worker
+        carto.run/workload-name: legacy-mood
+    spec:
+      containers:
+      - image: harbor.registry.dekt.io/dekt-dev/legacy-mood-myteam@sha256:cd90f30d40e7795cb0b6f4ed368b014f369e1c5544857f97cd32700bf8d01323
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
