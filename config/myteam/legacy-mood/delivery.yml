@@ -29,7 +29,7 @@ spec:
         carto.run/workload-name: legacy-mood
     spec:
       containers:
-      - image: harbor.registry.dekt.io/dekt-dev/legacy-mood-myteam@sha256:c2ea055c8e288d98988475e7b5fc74ae54db0831ffd58d653ce7e8dc8e8d9969
+      - image: harbor.registry.dekt.io/dekt-dev/legacy-mood-myteam@sha256:ca629ab7034b9e9b726ebc51b15dcdbf99e0df1c1780d2360a18756148ac2c8d
         name: workload
         resources: {}
         securityContext:
