@@ -47,7 +47,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.registry.dekt.io/dekt-dev/mysensors-mydev@sha256:b33fb0c4e9b799911f5d5ba65f321e38caf3b7dfcc749ccefefe71fb462f0c1f
+        image: dektregistry.azurecr.io/dekt-dev/mysensors-mydev@sha256:602bb45a16760fcc3b9c2249c118df10eadb555f3ea1e5aef6eb13b56750a21a
         livenessProbe:
           httpGet:
             path: /livez
