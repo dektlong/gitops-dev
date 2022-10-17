@@ -24,7 +24,7 @@ spec:
         carto.run/workload-name: mood-portal
     spec:
       containers:
-      - image: dektregistry.azurecr.io/dekt-dev/mood-portal-myteam@sha256:d0f892bb1ee10902d00505595637fa2173e4ac03c27981d694d0aed82ae0c6d3
+      - image: dektregistry.azurecr.io/dekt-dev/mood-portal-myteam@sha256:d4b27636e3b780a67a29f4618b0c7242c89dede05574657309831cad586d581f
         name: workload
         resources: {}
         securityContext:
