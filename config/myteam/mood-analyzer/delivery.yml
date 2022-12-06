@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mood-analyzer
+  annotations:
+    kapp.k14s.io/update-strategy: fallback-on-replace
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+  labels:
+    app.kubernetes.io/part-of: mood-analyzer
+    apps.tanzu.vmware.com/workload-type: dekt-worker
+    app.kubernetes.io/component: run
+    carto.run/workload-name: mood-analyzer
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: run
+      app.kubernetes.io/part-of: mood-analyzer
+      apps.tanzu.vmware.com/workload-type: dekt-worker
+      carto.run/workload-name: mood-analyzer
+  template:
+    metadata:
+      annotations:
+        conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: mood-analyzer
+        apps.tanzu.vmware.com/workload-type: dekt-worker
+        carto.run/workload-name: mood-analyzer
+    spec:
+      containers:
+      - image: registry.dekt.io/dekt-dev/mood-analyzer-myteam@sha256:5af29bf4ce9dc5ad4710c538a2afe75137117c8d6ebbb7c7bfd3d0223fcbbc73
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
