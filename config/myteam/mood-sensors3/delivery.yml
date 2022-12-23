@@ -52,7 +52,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.dekt.io/dekt-dev/mood-sensors3-myteam@sha256:85328a3c874f5b3d8712889749e45197d118b4d98a69af75565ba8309fbd7535
+        image: registry.dekt.io/dekt-dev/mood-sensors3-myteam@sha256:bbb48501b13e3ceae3abdc1464d57f2f7fe61493851d13f26c36c3d3f59862bc
         livenessProbe:
           httpGet:
             path: /livez
