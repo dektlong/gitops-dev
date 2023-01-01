@@ -35,7 +35,7 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: registry.dekt.io/dekt-dev/mysensors:latest@sha256:adcdd9ffa37eee5d0d90d7a74d273def1139563c22969814bff8306577b658bb
+        developer.apps.tanzu.vmware.com/image-source-digest: registry.dekt.io/dekt-dev/mysensors:latest@sha256:32821ade443c73b09e2368bd42e63439e2c1056d96c03a39d3839e00de8119fd
         developer.conventions/target-containers: workload
         services.conventions.apps.tanzu.vmware.com/mysql: mysql-connector-java/8.0.30
       labels:
@@ -59,7 +59,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: registry.dekt.io/dekt-dev/mysensors-mydev@sha256:2dbc43bb32ec5a8f622a3eede315b545a6c02e7934b3a275afa791ed1162a44f
+        image: registry.dekt.io/dekt-dev/mysensors-mydev@sha256:fb4276894700794800ae5d8bdd2e372719e5c0abb01bb267d8e97845185c924a
         livenessProbe:
           httpGet:
             path: /livez
