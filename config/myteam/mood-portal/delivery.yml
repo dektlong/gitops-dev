@@ -29,7 +29,7 @@ spec:
       containers:
       - env:
         - name: HAPPY_THRESHOLD
-          value: "20"
+          value: "5"
         - name: SENSORS_ACTIVATE_API
           value: http://mood-sensors.dev.dekt.io/activate
         - name: SENSORS_MEASURE_API
