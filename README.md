@@ -1,0 +1,2 @@
+# dekt-gitpos
+# gitops-dev
