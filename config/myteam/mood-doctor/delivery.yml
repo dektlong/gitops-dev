@@ -36,7 +36,10 @@ spec:
         carto.run/workload-name: mood-doctor
     spec:
       containers:
-      - image: dektregistry.azurecr.io/dekt-system/workloads/mood-doctor-myteam@sha256:42315bc9118766fef15e8915c40a9b93be0af0dc485881fb5525a4c305e4de18
+      - env:
+        - name: OPENAI_API_KEY
+          value: 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
+        image: dektregistry.azurecr.io/dekt-system/workloads/mood-doctor-myteam@sha256:5ef4b1576b69fba99769e325fe640fed33af130acbe0ea92da09ec3059f3240b
         name: workload
         resources: {}
         securityContext:
