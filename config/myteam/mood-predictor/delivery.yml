@@ -32,7 +32,7 @@ spec:
       - env:
         - name: OPENAI_API_KEY
           value: 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
-        image: dektregistry.azurecr.io/dekt-system/workloads/mood-predictor-myteam@sha256:d81b4c1f56cfc392e83a0f1c108c2b9449128aea37d1b824fe7a432813c6a44d
+        image: dektregistry.azurecr.io/dekt-system/workloads/mood-predictor-myteam@sha256:a3d9884bf38c3aff47534d9873006362264db458670a942b4ab077f2fd239845
         name: workload
         resources: {}
         securityContext:
