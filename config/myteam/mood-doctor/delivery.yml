@@ -36,7 +36,7 @@ spec:
         carto.run/workload-name: mood-doctor
     spec:
       containers:
-      - image: dektregistry.azurecr.io/dekt-system/workloads/mood-doctor-myteam@sha256:1d29a6aae5e7486ff116a669555a035e0fbbda064a3ec08393266e44b2d322be
+      - image: dektregistry.azurecr.io/dekt-system/workloads/mood-doctor-myteam@sha256:42315bc9118766fef15e8915c40a9b93be0af0dc485881fb5525a4c305e4de18
         name: workload
         resources: {}
         securityContext:
