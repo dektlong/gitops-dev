@@ -16,7 +16,7 @@ waitRules:
 apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
-  name: dekt-metal-inventory
+  name: dekt-metal-dekt-genai
   annotations:
     autoscaling.knative.dev/minScale: "1"
     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
@@ -29,11 +29,11 @@ metadata:
     app.kubernetes.io/component: run
     carto.run/workload-name: dekt-metal
 spec:
-  name: inventory
+  name: dekt-genai
   service:
     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
     kind: ClassClaim
-    name: postgres-claim
+    name: genai-service
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service
@@ -42,7 +42,7 @@ spec:
 apiVersion: servicebinding.io/v1alpha3
 kind: ServiceBinding
 metadata:
-  name: dekt-metal-reading
+  name: dekt-metal-dekt-secret-sauce
   annotations:
     autoscaling.knative.dev/minScale: "1"
     kapp.k14s.io/change-group: servicebinding.io/ServiceBindings
@@ -55,11 +55,11 @@ metadata:
     app.kubernetes.io/component: run
     carto.run/workload-name: dekt-metal
 spec:
-  name: reading
+  name: dekt-secret-sauce
   service:
     apiVersion: services.apps.tanzu.vmware.com/v1alpha1
     kind: ClassClaim
-    name: rabbitmq-claim
+    name: postgres-vectordb
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service

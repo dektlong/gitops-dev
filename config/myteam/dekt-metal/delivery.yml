@@ -55,7 +55,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: dektregistry.azurecr.io/dekt-system/workloads/dekt-metal-myteam@sha256:8d81a0aa3691683f97fb0447d47001021767d61af5373e2ea0d98e57da495909
+        image: dektregistry.azurecr.io/dekt-system/workloads/dekt-metal-myteam@sha256:fb3e11cc14cd2ec62222f854cbd890e1cf66b6b2d759e3c58ac6104d366756cf
         livenessProbe:
           httpGet:
             path: /livez
